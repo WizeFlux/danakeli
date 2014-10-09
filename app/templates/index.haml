@@ -1,0 +1,46 @@
+!!! 5
+%html
+  %head
+    %title Dana Keli
+    %meta{http: {equiv: 'Content-Type'}, content: 'text/html;charset=utf-8'}
+    %meta{name: 'description', content: 'Dana Keli'}
+    %meta{name: 'keywords', content: 'Dana Keli, photo'}
+    %link{rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon'}
+    %link{"rel" => "stylesheet", "type" => "text/css", "href" => "stylesheets/application.css"}
+    /[if IE]
+      %link{"rel" => "stylesheet", "type" => "text/css", "href" => "stylesheets/ie.css"}
+    
+  %body
+    #container
+      %header<
+        %h1<>
+          %a.active{:href => '/'} Dana Keli
+        
+        %nav<>
+          %a.contacts{:href => '/contacs'}> Contacts
+          %a.weddings{:href => '/weddings'}> Weddings
+          %a.personal{:href => '/personal'}> Personal
+      
+      %section
+        .contacts
+          %p
+            Email:
+            %a{href: 'mailto:email'} Email
+          %p
+            Phone:
+            %a{href: 'callto:phone'} Phone
+          %p
+            Skype:
+            %a{href: 'callto:skype'} Skype
+        
+        .weddings.gallery
+          %a.left{href: true} Left
+          %section
+            %div{style: "background-image: url(images/photos/personal/2L6TDJB76Wk.jpg);"}
+          %a.right{href: true} Right
+        
+        .personal.gallery
+          %a.left{href: true} Left
+          %section
+            %div{style: "background-image: url(images/photos/personal/2L6TDJB76Wk.jpg);"}
+          %a.right{href: true} Right

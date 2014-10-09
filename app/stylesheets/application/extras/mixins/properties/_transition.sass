@@ -1,0 +1,8 @@
+$base_transition: all .25s ease-in-out !default
+
+= transition($value: $base_transition)
+  :-webkit-transition $value
+  :-moz-transition $value
+  :-o-transition $value
+  :-ms-transition $value
+  :transition $value

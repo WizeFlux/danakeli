@@ -1,0 +1,7 @@
+/public/application.js
+/public/application.js.map
+/public/stylesheets/application.css
+/public/stylesheets/ie.css
+/vendor
+/.sass-cache
+.DS_Store
