@@ -1,46 +1,50 @@
 !!! 5
-%html
+%html{ng: {app: "DanaKeli"}}
   %head
     %title Dana Keli
     %meta{http: {equiv: 'Content-Type'}, content: 'text/html;charset=utf-8'}
     %meta{name: 'description', content: 'Dana Keli'}
     %meta{name: 'keywords', content: 'Dana Keli, photo'}
     %link{rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon'}
-    %link{"rel" => "stylesheet", "type" => "text/css", "href" => "stylesheets/application.css"}
+    %link{rel: "stylesheet", type: "text/css", href: "stylesheets/application.css"}
+    %script{type: "text/javascript", src: "../vendor/components/angular/angular.min.js"}
+    %script{type: "text/javascript", src: "../vendor/components/angular-scroll/angular-scroll.min.js"}
+    %script{type: "text/javascript", src: "javascripts/application.js"}
     /[if IE]
-      %link{"rel" => "stylesheet", "type" => "text/css", "href" => "stylesheets/ie.css"}
+      %link{rel: "stylesheet", type: "text/css", href: "stylesheets/ie.css"}
     
-  %body
-    #container
+  %body{ng: {controller: "WelcomeCtrl"}}
+    #container{du: {scroll: {container: "scroll-container"}}}
       %header<
         %h1<>
-          %a.active{:href => '/'} Dana Keli
+          %a{href: '#welcome', du: {scrollspy: 'welcome', smooth: {scroll: true} }} Dana Keli
         
         %nav<>
-          %a.contacts{:href => '/contacs'}> Contacts
-          %a.weddings{:href => '/weddings'}> Weddings
-          %a.personal{:href => '/personal'}> Personal
+          %a.contacts{href: '#contacts', du: {scrollspy: 'contacts', smooth: {scroll: true}}}> Contacts
+          %a.weddings{href: '#weddings', du: {scrollspy: 'weddings', smooth: {scroll: true}}}> Weddings
+          %a.personal{href: '#personal', du: {scrollspy: 'personal', smooth: {scroll: true}}}> Personal
       
-      %section
-        .contacts
+      %section#scroll-container<
+        #welcome>
+          123
+        
+        #contacts>
           %p
             Email:
             %a{href: 'mailto:email'} Email
           %p
-            Phone:
+            Телефон:
             %a{href: 'callto:phone'} Phone
           %p
             Skype:
             %a{href: 'callto:skype'} Skype
-        
-        .weddings.gallery
-          %a.left{href: true} Left
-          %section
-            %div{style: "background-image: url(images/photos/personal/2L6TDJB76Wk.jpg);"}
-          %a.right{href: true} Right
-        
-        .personal.gallery
-          %a.left{href: true} Left
-          %section
-            %div{style: "background-image: url(images/photos/personal/2L6TDJB76Wk.jpg);"}
-          %a.right{href: true} Right
+      
+        #weddings.gallery<>
+          %article{ng: {repeat: "photo in weddingsPhotos", show: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url({{photo}});"}<>
+            %a.left{href: true, ng: {show: "weddingsPhotos[$index - 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index - 1])"}}> Left
+            %a.right{href: true, ng: {show: "weddingsPhotos[$index + 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index + 1])"}}> Right
+      
+        #personal.gallery<>
+          %article{ng: {repeat: "photo in personalPhotos", show: "isCurrentPhoto('personal', photo)"}, style: "background-image: url({{photo}});"}<>
+            %a.left{href: true, ng: {show: "personalPhotos[$index - 1]", click: "setCurrentPhoto('personal', personalPhotos[$index - 1])"}}> Left
+            %a.right{href: true, ng: {show: "personalPhotos[$index + 1]", click: "setCurrentPhoto('personal', personalPhotos[$index + 1])"}}> Right

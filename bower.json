@@ -1,6 +1,7 @@
 {
   "name": "Dana Keli",
   "dependencies": {
-    "angular": "1.2.24"
+    "angular": "1.2.24",
+    "angular-scroll": "0.6.2"
   }
 }

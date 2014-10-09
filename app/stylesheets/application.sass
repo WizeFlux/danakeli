@@ -21,7 +21,7 @@ html
   :min-height 100%
   
 html, html a
-  +colors($white, 0 1px 3px rgba(0, 0, 0, 0.5))
+  +colors(#000, 0 2px 0 rgba(255, 255, 255, 0.5))
 
 html *
   +box-sizing
@@ -29,7 +29,7 @@ html *
 body
   :font
     :size $base
-    :family "Lucida Console", sans-serif
+    :family "Comfortaa Regular", sans-serif
   :-webkit-font-smoothing antialiased
   :line-height $baseline
   :height 100%
@@ -41,13 +41,14 @@ body
   > header
     :position relative
     :width 100%
-    :z-index 1
+    :z-index 101
     +children-inline
       
     > h1
       :position relative
       :width 120px
       :height $header
+      :background #fff
       
       > a
         :display block
@@ -59,11 +60,11 @@ body
         
         &:hover
           :background
-            :color rgba(128, 128, 128, 0.25)
+            :color rgba(128, 128, 128, 0.05)
         
         &.active
           :background
-            :color rgba(128, 128, 128, 0.5)
+            :color rgba(128, 128, 128, 0.1)
     
       & + nav
         :margin
@@ -75,6 +76,7 @@ body
       :width 100%
       :text
         :align right
+      :background #fff
       +children-inline
       
       > a
@@ -90,11 +92,11 @@ body
         
         &:hover
           :background
-            :color rgba(128, 128, 128, 0.25)
+            :color rgba(128, 128, 128, 0.05)
         
         &.active
           :background
-            :color rgba(128, 128, 128, 0.5)
+            :color rgba(128, 128, 128, 0.1)
           
         &.contacts
           :background
@@ -112,60 +114,63 @@ body
     +absoluted
     :top $header
     :overflow auto
-    :background rgba(128, 128, 128, 0.5)
+    +transition
+    +children-inline
     
     > div
-      +inline-block
+      :position relative
       :width 100%
       :height 100%
-      
+      :background rgba(128, 128, 128, 0.1)
+    
       > p
         :margin
           :top 20px
         :font
-          :size 24px
+          :size 26px
         :line-height 30px
         :text
           :align center
       
+        &:first-child
+          :margin
+            :top 40px
+      
         > a
           +hover-underline
     
-    > .gallery
-      :position relative
-      
-      > a
-        :position absolute
-        :z-index 1
-        :width $header
-        :height 100%
-        :top 0
-        :background no-repeat center
-        +indented
-        +background-size(60% auto)
-        +transition
-        
-        &.left
-          :left 0
-          :background
-            :image url(../images/icons/left.png)
-        
-        &.right
-          :left 100%
-          :margin
-            :left -$header
-          :background
-            :image url(../images/icons/right.png)
-      
-      > section
-        +absoluted
-        :left $header
-        :right $header
-        :border 10px solid transparent
+      &.gallery
+        :overflow auto
+        :white-space nowrap
         +children-inline
         
-        > div
+        > article
+          :position relative
           :width 100%
           :height 100%
           :background no-repeat center
           +background-size
+          :border 10px solid transparent
+        
+          > a
+            :position absolute
+            :overflow hidden
+            :z-index 1
+            :width 50%
+            :height 100%
+            :top 0
+            :background no-repeat 15px center url(../images/icons/left.png)
+            +indented
+            +background-size(8% auto)
+            +opacity(0)
+            +transition
+      
+            &.left
+              :left 0
+      
+            &.right
+              :left 50%
+              +rotate-y(180)
+      
+            &:hover
+              +opacity(1)
