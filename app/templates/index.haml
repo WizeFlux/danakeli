@@ -29,12 +29,12 @@
           %a{ng: {repeat: "photo in mixedPhotos | shuffle | limitTo:8", click: "setCurrentPhoto(getPhotoGroup(photo), photo)"}, du: {smooth: {scroll: true}}, href: "{{'#' + getPhotoGroup(photo)}}", style: "background-image: url({{photo}});"}>
         
         #weddings.gallery<>
-          %article{ng: {repeat: "photo in weddingsPhotos", show: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url(public/{{photo}});"}<>
+          %article{ng: {repeat: "photo in weddingsPhotos", if: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url({{photo}});"}<>
             %a.left{href: true, ng: {show: "weddingsPhotos[$index - 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index - 1])"}}> Left
             %a.right{href: true, ng: {show: "weddingsPhotos[$index + 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index + 1])"}}> Right
       
         #personal.gallery<>
-          %article{ng: {repeat: "photo in personalPhotos", show: "isCurrentPhoto('personal', photo)"}, style: "background-image: url(public/{{photo}});"}<>
+          %article{ng: {repeat: "photo in personalPhotos", if: "isCurrentPhoto('personal', photo)"}, style: "background-image: url({{photo}});"}<>
             %a.left{href: true, ng: {show: "personalPhotos[$index - 1]", click: "setCurrentPhoto('personal', personalPhotos[$index - 1])"}}> Left
             %a.right{href: true, ng: {show: "personalPhotos[$index + 1]", click: "setCurrentPhoto('personal', personalPhotos[$index + 1])"}}> Right
         
