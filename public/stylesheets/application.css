@@ -1,0 +1,387 @@
+/* reset */
+/* animation */
+/* button */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, input,
+textarea, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1.5; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" ""; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: ""; }
+
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle; }
+
+li {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+  a img {
+    border: 0; }
+
+textarea {
+  resize: none; }
+
+footer, header, aside, nav, menu, video, audio, time, progress, section, article {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  display: block; }
+
+aside {
+  text-align: right; }
+
+input[type="file"] {
+  opacity: 0;
+  -moz-opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+  cursor: pointer; }
+
+/* colors */
+/* shadows */
+@font-face {
+  font-family: "Comfortaa Regular";
+  font-style: normal;
+  src: local("Comfortaa Regular"), url("../fonts/Comfortaa-Regular.eot") format("oet"), local("Comfortaa Regular"), url("../fonts/Comfortaa-Regular.woff") format("woff"), local("Comfortaa Regular"), url("../fonts/Comfortaa-Regular.ttf") format("truetype"), url("../fonts/Comfortaa-Regular.svg") format("svg"); }
+/* master */
+html {
+  position: relative;
+  min-width: 960px;
+  min-height: 100%; }
+
+html, html a {
+  color: #000;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5); }
+
+html * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 13px;
+  font-family: "Comfortaa Regular", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 20px;
+  height: 100%; }
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+  #container > header {
+    position: relative;
+    width: 100%;
+    z-index: 101; }
+    #container > header > * {
+      zoom: 1;
+      display: inline;
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      vertical-align: top; }
+    #container > header > h1 {
+      position: relative;
+      width: 120px;
+      height: 80px;
+      background: #fff; }
+      #container > header > h1 > a {
+        display: block;
+        height: 100%;
+        background: url(../images/icons/logo.png) no-repeat center;
+        text-indent: -99999px;
+        -moz-background-size: 90%;
+        -webkit-background-size: 90%;
+        -o-background-size: 90%;
+        background-size: 90%;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out; }
+        #container > header > h1 > a:hover {
+          background-color: rgba(128, 128, 128, 0.05); }
+        #container > header > h1 > a.active {
+          background-color: rgba(128, 128, 128, 0.1); }
+      #container > header > h1 + nav {
+        margin-left: -120px;
+        padding-left: 120px; }
+    #container > header > nav {
+      width: 100%;
+      text-align: right;
+      background: #fff; }
+      #container > header > nav > * {
+        zoom: 1;
+        display: inline;
+        display: -moz-inline-box;
+        display: inline-block;
+        *display: inline;
+        vertical-align: top; }
+      #container > header > nav > a {
+        width: 33.33%;
+        height: 80px;
+        line-height: 80px;
+        background: no-repeat center;
+        text-align: left;
+        text-indent: -99999px;
+        -moz-background-size: auto 60%;
+        -webkit-background-size: auto 60%;
+        -o-background-size: auto 60%;
+        background-size: auto 60%;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out; }
+        #container > header > nav > a:hover {
+          background-color: rgba(128, 128, 128, 0.05); }
+        #container > header > nav > a.active {
+          background-color: rgba(128, 128, 128, 0.1); }
+        #container > header > nav > a.contacts {
+          background-image: url(../images/icons/contacts.png); }
+        #container > header > nav > a.weddings {
+          background-image: url(../images/icons/weddings.png); }
+        #container > header > nav > a.personal {
+          background-image: url(../images/icons/personal.png); }
+  #container > section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80px;
+    min-height: 400px;
+    overflow: auto;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
+    #container > section > * {
+      zoom: 1;
+      display: inline;
+      display: -moz-inline-box;
+      display: inline-block;
+      *display: inline;
+      vertical-align: top; }
+    #container > section > div {
+      white-space: normal;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: rgba(128, 128, 128, 0.1); }
+      #container > section > div.gallery-list > * {
+        zoom: 1;
+        display: inline;
+        display: -moz-inline-box;
+        display: inline-block;
+        *display: inline;
+        vertical-align: top; }
+      #container > section > div.gallery-list > a {
+        width: 25%;
+        height: 50%;
+        background: no-repeat center;
+        border: 10px solid transparent;
+        -moz-background-size: contain;
+        -webkit-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+        opacity: 0.9;
+        -moz-opacity: 0.9;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=90)";
+        -webkit-transition: opacity 0.25s ease-out;
+        -moz-transition: opacity 0.25s ease-out;
+        -o-transition: opacity 0.25s ease-out;
+        -ms-transition: opacity 0.25s ease-out;
+        transition: opacity 0.25s ease-out; }
+        #container > section > div.gallery-list > a:hover {
+          opacity: 1;
+          -moz-opacity: 1;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)"; }
+      #container > section > div.gallery {
+        overflow: auto;
+        white-space: nowrap; }
+        #container > section > div.gallery > * {
+          zoom: 1;
+          display: inline;
+          display: -moz-inline-box;
+          display: inline-block;
+          *display: inline;
+          vertical-align: top; }
+        #container > section > div.gallery > article {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: no-repeat center;
+          -moz-background-size: contain;
+          -webkit-background-size: contain;
+          -o-background-size: contain;
+          background-size: contain;
+          border: 20px solid transparent; }
+          #container > section > div.gallery > article > a {
+            position: absolute;
+            overflow: hidden;
+            z-index: 1;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            background: no-repeat 15px center url(../images/icons/left.png);
+            text-indent: -99999px;
+            -moz-background-size: 8% auto;
+            -webkit-background-size: 8% auto;
+            -o-background-size: 8% auto;
+            background-size: 8% auto;
+            opacity: 0;
+            -moz-opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out; }
+            #container > section > div.gallery > article > a.left {
+              left: 0; }
+            #container > section > div.gallery > article > a.right {
+              left: 50%;
+              -webkit-transform: rotateY(180deg);
+              -moz-transform: rotateY(180deg);
+              -o-transform: rotateY(180deg);
+              -ms-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+            #container > section > div.gallery > article > a:hover {
+              opacity: 1;
+              -moz-opacity: 1;
+              -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)"; }
+      #container > section > div#contacts > h1 {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 160px; }
+        #container > section > div#contacts > h1 > a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../images/icons/logo.png) no-repeat center;
+          text-indent: -99999px;
+          -moz-background-size: auto 50%;
+          -webkit-background-size: auto 50%;
+          -o-background-size: auto 50%;
+          background-size: auto 50%; }
+      #container > section > div#contacts > footer {
+        position: absolute;
+        top: 100%;
+        margin-top: -160px;
+        height: 160px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: #fff;
+        text-align: center; }
+        #container > section > div#contacts > footer > * {
+          zoom: 1;
+          display: inline;
+          display: -moz-inline-box;
+          display: inline-block;
+          *display: inline;
+          vertical-align: top; }
+        #container > section > div#contacts > footer > div {
+          font-size: 18px;
+          width: 33.33%;
+          padding-left: 15px;
+          padding-right: 15px;
+          line-height: 120px; }
+          #container > section > div#contacts > footer > div.left {
+            text-align: left; }
+          #container > section > div#contacts > footer > div.center {
+            text-align: center; }
+          #container > section > div#contacts > footer > div.right {
+            text-align: right; }
+          #container > section > div#contacts > footer > div > p {
+            width: 100%;
+            zoom: 1;
+            display: inline;
+            display: -moz-inline-box;
+            display: inline-block;
+            *display: inline;
+            vertical-align: top;
+            vertical-align: bottom;
+            line-height: 30px; }
+            #container > section > div#contacts > footer > div > p > span {
+              zoom: 1;
+              display: inline;
+              display: -moz-inline-box;
+              display: inline-block;
+              *display: inline;
+              vertical-align: top;
+              width: 100%; }
+              #container > section > div#contacts > footer > div > p > span > a {
+                text-decoration: none; }
+                #container > section > div#contacts > footer > div > p > span > a:hover {
+                  text-decoration: underline; }

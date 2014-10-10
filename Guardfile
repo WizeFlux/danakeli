@@ -1,4 +1,4 @@
-guard :haml, input: 'app/templates', output: 'public', run_at_start: true do
+guard :haml, input: 'app/templates', output: '.', run_at_start: true do
   watch /^*+\/[^_]\w*(\.haml)$/
 end
 

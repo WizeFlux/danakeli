@@ -6,16 +6,16 @@
     %meta{name: 'description', content: 'Dana Keli'}
     %meta{name: 'keywords', content: 'Dana Keli, photo'}
     %link{rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon'}
-    %link{rel: "stylesheet", type: "text/css", href: "stylesheets/application.css"}
-    %script{type: "text/javascript", src: "../vendor/components/angular/angular.min.js"}
-    %script{type: "text/javascript", src: "../vendor/components/angular-scroll/angular-scroll.min.js"}
-    %script{type: "text/javascript", src: "javascripts/application.js"}
+    %link{rel: "stylesheet", type: "text/css", href: "public/stylesheets/application.css"}
+    %script{type: "text/javascript", src: "vendor/components/angular/angular.min.js"}
+    %script{type: "text/javascript", src: "vendor/components/angular-scroll/angular-scroll.min.js"}
+    %script{type: "text/javascript", src: "public/javascripts/application.js"}
     /[if IE]
-      %link{rel: "stylesheet", type: "text/css", href: "stylesheets/ie.css"}
+      %link{rel: "stylesheet", type: "text/css", href: "public/stylesheets/ie.css"}
     
-  %body{ng: {controller: "WelcomeCtrl"}}
-    #container{du: {scroll: {container: "scroll-container"}}}
-      %header<
+  %body{ng: {controller: "WelcomeCtrl"}}<>
+    #container{du: {scroll: {container: "scroll-container"}}}<>
+      %header<>
         %h1<>
           %a{href: '#welcome', du: {scrollspy: 'welcome', smooth: {scroll: true}}} Dana Keli
         
@@ -24,46 +24,46 @@
           %a.personal{href: '#personal', du: {scrollspy: 'personal', smooth: {scroll: true}}}> Personal
           %a.contacts{href: '#contacts', du: {scrollspy: 'contacts', smooth: {scroll: true}}}> Contacts
       
-      %section#scroll-container<
+      %section#scroll-container<>
         #welcome.gallery-list<>
           %a{ng: {repeat: "photo in mixedPhotos | shuffle | limitTo:8", click: "setCurrentPhoto(getPhotoGroup(photo), photo)"}, du: {smooth: {scroll: true}}, href: "{{'#' + getPhotoGroup(photo)}}", style: "background-image: url({{photo}});"}>
         
         #weddings.gallery<>
-          %article{ng: {repeat: "photo in weddingsPhotos", if: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url({{photo}});", id: "weddings-{{$index}}"}<>
+          %article{ng: {repeat: "photo in weddingsPhotos", show: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url(public/{{photo}});"}<>
             %a.left{href: true, ng: {show: "weddingsPhotos[$index - 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index - 1])"}}> Left
             %a.right{href: true, ng: {show: "weddingsPhotos[$index + 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index + 1])"}}> Right
       
         #personal.gallery<>
-          %article{ng: {repeat: "photo in personalPhotos", if: "isCurrentPhoto('personal', photo)"}, style: "background-image: url({{photo}});", id: "personal-{{$index}}"}<>
+          %article{ng: {repeat: "photo in personalPhotos", show: "isCurrentPhoto('personal', photo)"}, style: "background-image: url(public/{{photo}});"}<>
             %a.left{href: true, ng: {show: "personalPhotos[$index - 1]", click: "setCurrentPhoto('personal', personalPhotos[$index - 1])"}}> Left
             %a.right{href: true, ng: {show: "personalPhotos[$index + 1]", click: "setCurrentPhoto('personal', personalPhotos[$index + 1])"}}> Right
         
-        #contacts<
+        #contacts<>
           %h1<>
-            %a{href: '#welcome', du: {smooth: {scroll: true}}} Dana Keli
+            %a{href: '#welcome', du: {smooth: {scroll: true}}}> Dana Keli
           
           %footer<>
             .left>
-              %p
-                %span It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+              %p<>
+                %span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
           
-            .center>
-              %p
-                %span
+            .center<>
+              %p<>
+                %span<>
                   Email:
                   %a{href: 'mailto:email'} Email
             
-                %span
+                %span<>
                   Телефон:
                   %a{href: 'callto:+79213216600'} +79213216600
             
-                %span
+                %span<>
                   Skype:
                   %a{href: 'callto:natali.lu'} natali.lu
           
             .right>
-              %p
-                %span
+              %p<>
+                %span<>
                   Powered by
                   %a{href: 'http://psyberia.pro'} Psyberia
                   &
