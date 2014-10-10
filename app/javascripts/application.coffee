@@ -13,7 +13,7 @@ document.createElement 'FOOTER'
 
 DanaKeli = angular.module 'DanaKeli', ['duScroll']
 
-DanaKeli.controller 'WelcomeCtrl', ['$scope', ($scope) ->
+DanaKeli.controller 'WelcomeCtrl', ['$scope', '$window', ($scope, $window) ->
   $scope.weddingsPhotos = [
     "images/photos/weddings/d9.jpg"
     "images/photos/weddings/d11.jpg"
@@ -86,8 +86,12 @@ DanaKeli.controller 'WelcomeCtrl', ['$scope', ($scope) ->
   $scope.isCurrentPhoto = (gallery, photo)->
     $scope[gallery] == photo
   
+  $scope.getPhotoGroup = (photo)->
+    photo.match(/(\w+)\/(\w|\.)+$/)[1]
+  
   $scope.setCurrentPhoto 'weddings', $scope.weddingsPhotos[0]
   $scope.setCurrentPhoto 'personal', $scope.personalPhotos[0]
+  $scope.mixedPhotos = $scope.weddingsPhotos.concat $scope.personalPhotos
 ]
 
 DanaKeli.config ['$locationProvider', ($locationProvider)->
@@ -101,3 +105,26 @@ DanaKeli.run ['$rootScope', '$location', ($rootScope, $location)->
       $location.hash(hash.substr(1)).replace()
       $rootScope.$apply()
 ]
+
+DanaKeli.filter 'shuffle', ->
+  shuffledArr = []
+  shuffledLength = 0
+  
+  (arr)->
+    o = arr.slice(0, arr.length)
+    if shuffledLength == arr.length
+      return shuffledArr
+    
+    j = undefined
+    x = undefined
+    i = o.length
+
+    while i
+      j = parseInt(Math.random() * i)
+      x = o[--i]
+      o[i] = o[j]
+      o[j] = x
+    
+    shuffledArr = o
+    shuffledLength = o.length
+    o

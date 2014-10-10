@@ -17,34 +17,55 @@
     #container{du: {scroll: {container: "scroll-container"}}}
       %header<
         %h1<>
-          %a{href: '#welcome', du: {scrollspy: 'welcome', smooth: {scroll: true} }} Dana Keli
+          %a{href: '#welcome', du: {scrollspy: 'welcome', smooth: {scroll: true}}} Dana Keli
         
         %nav<>
-          %a.contacts{href: '#contacts', du: {scrollspy: 'contacts', smooth: {scroll: true}}}> Contacts
           %a.weddings{href: '#weddings', du: {scrollspy: 'weddings', smooth: {scroll: true}}}> Weddings
           %a.personal{href: '#personal', du: {scrollspy: 'personal', smooth: {scroll: true}}}> Personal
+          %a.contacts{href: '#contacts', du: {scrollspy: 'contacts', smooth: {scroll: true}}}> Contacts
       
       %section#scroll-container<
-        #welcome>
-          123
+        #welcome.gallery-list<>
+          %a{ng: {repeat: "photo in mixedPhotos | shuffle | limitTo:8", click: "setCurrentPhoto(getPhotoGroup(photo), photo)"}, du: {smooth: {scroll: true}}, href: "{{'#' + getPhotoGroup(photo)}}", style: "background-image: url({{photo}});"}>
         
-        #contacts>
-          %p
-            Email:
-            %a{href: 'mailto:email'} Email
-          %p
-            Телефон:
-            %a{href: 'callto:phone'} Phone
-          %p
-            Skype:
-            %a{href: 'callto:skype'} Skype
-      
         #weddings.gallery<>
-          %article{ng: {repeat: "photo in weddingsPhotos", show: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url({{photo}});"}<>
+          %article{ng: {repeat: "photo in weddingsPhotos", if: "isCurrentPhoto('weddings', photo)"}, style: "background-image: url({{photo}});", id: "weddings-{{$index}}"}<>
             %a.left{href: true, ng: {show: "weddingsPhotos[$index - 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index - 1])"}}> Left
             %a.right{href: true, ng: {show: "weddingsPhotos[$index + 1]", click: "setCurrentPhoto('weddings', weddingsPhotos[$index + 1])"}}> Right
       
         #personal.gallery<>
-          %article{ng: {repeat: "photo in personalPhotos", show: "isCurrentPhoto('personal', photo)"}, style: "background-image: url({{photo}});"}<>
+          %article{ng: {repeat: "photo in personalPhotos", if: "isCurrentPhoto('personal', photo)"}, style: "background-image: url({{photo}});", id: "personal-{{$index}}"}<>
             %a.left{href: true, ng: {show: "personalPhotos[$index - 1]", click: "setCurrentPhoto('personal', personalPhotos[$index - 1])"}}> Left
             %a.right{href: true, ng: {show: "personalPhotos[$index + 1]", click: "setCurrentPhoto('personal', personalPhotos[$index + 1])"}}> Right
+        
+        #contacts<
+          %h1<>
+            %a{href: '#welcome', du: {smooth: {scroll: true}}} Dana Keli
+          
+          %footer<>
+            .left>
+              %p
+                %span It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+          
+            .center>
+              %p
+                %span
+                  Email:
+                  %a{href: 'mailto:email'} Email
+            
+                %span
+                  Телефон:
+                  %a{href: 'callto:+79213216600'} +79213216600
+            
+                %span
+                  Skype:
+                  %a{href: 'callto:natali.lu'} natali.lu
+          
+            .right>
+              %p
+                %span
+                  Powered by
+                  %a{href: 'http://psyberia.pro'} Psyberia
+                  &
+                  %a{href: 'http://realto.be'} W!zeflux
+                  © 2014

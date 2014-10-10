@@ -33,7 +33,6 @@ body
   :-webkit-font-smoothing antialiased
   :line-height $baseline
   :height 100%
-  :min-height 100%
   
 #container
   +grid-container
@@ -113,32 +112,29 @@ body
   > section
     +absoluted
     :top $header
+    :min-height 400px
     :overflow auto
     +transition
     +children-inline
     
     > div
+      :white-space normal
       :position relative
       :width 100%
       :height 100%
       :background rgba(128, 128, 128, 0.1)
-    
-      > p
-        :margin
-          :top 20px
-        :font
-          :size 26px
-        :line-height 30px
-        :text
-          :align center
       
-        &:first-child
-          :margin
-            :top 40px
-      
+      &.gallery-list
+        +children-inline
+        
         > a
-          +hover-underline
-    
+          :width 25%
+          :height 50%
+          :background no-repeat center
+          :border 10px solid transparent
+          +background-size
+          +hover-opacity
+      
       &.gallery
         :overflow auto
         :white-space nowrap
@@ -150,7 +146,7 @@ body
           :height 100%
           :background no-repeat center
           +background-size
-          :border 10px solid transparent
+          :border 20px solid transparent
         
           > a
             :position absolute
@@ -174,3 +170,67 @@ body
       
             &:hover
               +opacity(1)
+      
+      &#contacts
+        > h1
+          :position absolute
+          :width 100%
+          :left 0
+          :top 0
+          :bottom 160px
+          
+          > a
+            :display block
+            :width 100%
+            :height 100%
+            :background url(../images/icons/logo.png) no-repeat center
+            +indented
+            +background-size(auto 50%)
+        
+        > footer
+          :position absolute
+          :top 100%
+          :margin
+            :top -160px
+          :height 160px
+          :padding
+            :top 20px
+            :bottom 20px
+          :background #fff
+          :text
+            :align center
+          +children-inline
+        
+          > div
+            :font
+              :size 18px
+            :width 33.33%
+            :padding
+              :left 15px
+              :right 15px
+            :line-height 120px
+          
+            &.left
+              :text
+                :align left
+          
+            &.center
+              :text
+                :align center
+          
+            &.right
+              :text
+                :align right
+            
+            > p
+              :width 100%
+              +inline-block
+              :vertical-align bottom
+              :line-height 30px
+              
+              > span
+                +inline-block
+                :width 100%
+                
+                > a
+                  +hover-underline
